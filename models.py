@@ -2,14 +2,18 @@ from typing import List, Optional, Literal
 from pydantic import BaseModel
 from datetime import datetime
 
-class Product(BaseModel):
-    id: int
+
+class ProductBase(BaseModel):
     name: str
     description: str
     price: float
     image_url: str
     quantity: int
     created_at: datetime
+
+class Product(ProductBase):
+    id: int
+
 
 class OrderItem(BaseModel):
     product_id: int

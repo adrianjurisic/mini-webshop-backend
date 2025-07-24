@@ -1,29 +1,35 @@
 from enum import Enum
 from fastapi import FastAPI, HTTPException, Query, status, Body
-from models import Product, Order, OrderItem, Customer
+from models import Product, Order, OrderItem, Customer, ProductBase
 from typing import List, Optional
 from database import load_products, get_product_by_id, update_product, save_product, delete_product
 from database import save_order, load_orders, get_order_by_id, update_order_status
 from uuid import uuid4
 from datetime import datetime
 from mailer import send_order_email
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/products", response_model=List[Product])
 def get_products():
     return load_products()
 
-@app.post("/products", response_model=Product, status_code=status.HTTP_201_CREATED)
-def add_product(product: Product = Body(...)):
-    success = save_product(product)
-    if not success:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Proizvod sa ID-jem {product.id} vec postoji."
-        )
-    return product
+@app.post("/products", response_model=Product, status_code=201)
+def create_product(product: ProductBase):
+    products = load_products()
+    new_id = max((p.id for p in products), default=0) + 1
+    new_product = Product(id=new_id, **product.dict())
+    save_product(new_product)
+    return new_product
 
 @app.get("/products/{product_id}", response_model=Product)
 def get_product(product_id: int):
