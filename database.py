@@ -1,7 +1,8 @@
+from datetime import datetime
 import json
 from pathlib import Path
-from typing import List
-from models import Product
+from typing import List, Optional
+from models import Product, Order
 from fastapi.encoders import jsonable_encoder
 
 
@@ -58,3 +59,35 @@ def delete_product(product_id: int) -> bool:
         f.truncate()
         return True
 
+
+
+ORDERS_PATH = Path("data/orders.json")
+
+def load_orders() -> List[Order]:
+    if not ORDERS_PATH.exists():
+        return []
+    with ORDERS_PATH.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+        return [Order(**item) for item in data]
+
+def save_order(order: Order) -> None:
+    orders = load_orders()
+    orders.append(order)
+    with ORDERS_PATH.open("w", encoding="utf-8") as f:
+        json.dump([jsonable_encoder(o) for o in orders], f, indent=2, ensure_ascii=False)
+
+def get_order_by_id(order_id: int) -> Optional[Order]:
+    return next((o for o in load_orders() if o.id == order_id), None)
+
+def update_order_status(order_id: int, new_status: str) -> bool:
+    orders = load_orders()
+    found = False
+    for o in orders:
+        if o.id == order_id:
+            o.status = new_status
+            o.obrada = datetime.now()
+            found = True
+    if found:
+        with ORDERS_PATH.open("w", encoding="utf-8") as f:
+            json.dump([jsonable_encoder(o) for o in orders], f, indent=2, ensure_ascii=False)
+    return found

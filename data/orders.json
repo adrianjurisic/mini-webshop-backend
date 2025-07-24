@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "kupac": {
+      "ime": "Adrian",
+      "prezime": "J",
+      "adresa": "gvsaebddsb",
+      "telefon": "string",
+      "email": "string"
+    },
+    "stavke": [
+      {
+        "product_id": 1,
+        "quantity": 1
+      }
+    ],
+    "status": "Odbijeno",
+    "kreirano": "2025-07-24T15:12:09.855074",
+    "obrada": "2025-07-24T15:13:15.143620"
+  }
+]

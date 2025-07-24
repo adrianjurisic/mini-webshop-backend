@@ -1,8 +1,10 @@
 from fastapi import FastAPI, HTTPException, status, Body
-from models import Product
+from models import Product, Order, OrderItem, Customer
 from typing import List
 from database import load_products, get_product_by_id, update_product, save_product, delete_product
-
+from database import save_order, load_orders, get_order_by_id, update_order_status
+from uuid import uuid4
+from datetime import datetime
 
 app = FastAPI()
 
@@ -39,3 +41,34 @@ def delete_product_endpoint(product_id: int):
         raise HTTPException(status_code=404, detail="Proizvod nije pronadjen")
     return
 
+
+
+@app.post("/orders", response_model=Order, status_code=201)
+def create_order(order_data: Order):
+    existing = load_orders()
+    new_id = max([o.id for o in existing], default=0) + 1
+    order_data.id = new_id
+    order_data.kreirano = datetime.now()
+    save_order(order_data)
+    return order_data
+
+@app.get("/orders", response_model=List[Order])
+def get_all_orders():
+    return load_orders()
+
+
+@app.get("/orders/{order_id}", response_model=Order)
+def get_order(order_id: int):
+    order = get_order_by_id(order_id)
+    if not order:
+        raise HTTPException(status_code=404, detail="Narudžba nije pronađena")
+    return order
+
+@app.patch("/orders/{order_id}")
+def update_status(order_id: int, status: str = Body(..., embed=True)):
+    if status not in ["Prihvaćeno", "Odbijeno", "Završeno"]:
+        raise HTTPException(status_code=400, detail="Nevažeći status")
+    success = update_order_status(order_id, status)
+    if not success:
+        raise HTTPException(status_code=404, detail="Narudžba nije pronađena")
+    return {"message": f"Status promijenjen u '{status}'"}
