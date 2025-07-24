@@ -1,10 +1,13 @@
-from fastapi import FastAPI, HTTPException, status, Body
+from enum import Enum
+from fastapi import FastAPI, HTTPException, Query, status, Body
 from models import Product, Order, OrderItem, Customer
-from typing import List
+from typing import List, Optional
 from database import load_products, get_product_by_id, update_product, save_product, delete_product
 from database import save_order, load_orders, get_order_by_id, update_order_status
 from uuid import uuid4
 from datetime import datetime
+from mailer import send_order_email
+
 
 app = FastAPI()
 
@@ -50,11 +53,30 @@ def create_order(order_data: Order):
     order_data.id = new_id
     order_data.kreirano = datetime.now()
     save_order(order_data)
+    send_order_email(order_data)
     return order_data
 
+class OrderStatus(str, Enum):
+    prihvaceno = "Prihvaćeno"
+    odbijeno = "Odbijeno"
+    zavrseno = "Završeno"
+
 @app.get("/orders", response_model=List[Order])
-def get_all_orders():
-    return load_orders()
+def get_all_orders(
+    status: Optional[OrderStatus] = Query(None),
+    sort: Optional[str] = Query("desc", pattern="^(asc|desc)$"),
+    limit: int = Query(10, ge=1),
+    offset: int = Query(0, ge=0)
+):
+    orders = load_orders()
+
+    if status:
+        orders = [o for o in orders if o.status == status.value]
+
+    reverse = sort == "desc"
+    orders.sort(key=lambda x: x.kreirano, reverse=reverse)
+
+    return orders[offset:offset + limit]
 
 
 @app.get("/orders/{order_id}", response_model=Order)
