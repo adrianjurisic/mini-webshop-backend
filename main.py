@@ -1,6 +1,6 @@
 from enum import Enum
 from fastapi import FastAPI, HTTPException, Query, status, Body
-from models import Product, Order, OrderItem, Customer, ProductBase
+from models import OrderBase, Product, Order, OrderItem, Customer, ProductBase
 from typing import List, Optional
 from database import load_products, get_product_by_id, update_product, save_product, delete_product
 from database import save_order, load_orders, get_order_by_id, update_order_status
@@ -50,17 +50,14 @@ def delete_product_endpoint(product_id: int):
         raise HTTPException(status_code=404, detail="Proizvod nije pronadjen")
     return
 
-
-
-@app.post("/orders", response_model=Order, status_code=201)
-def create_order(order_data: Order):
-    existing = load_orders()
-    new_id = max([o.id for o in existing], default=0) + 1
-    order_data.id = new_id
-    order_data.kreirano = datetime.now()
-    save_order(order_data)
-    send_order_email(order_data)
-    return order_data
+@app.post("/orders", response_model=Order)
+def create_order(order_data: OrderBase):
+    orders = load_orders()
+    new_id = max((o.id for o in orders), default=0) + 1
+    new_order = Order(id=new_id, **order_data.dict())
+    save_order(new_order)
+    send_order_email(new_order)
+    return new_order
 
 class OrderStatus(str, Enum):
     prihvaceno = "Prihvaćeno"

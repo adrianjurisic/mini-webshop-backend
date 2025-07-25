@@ -26,10 +26,13 @@ class Customer(BaseModel):
     telefon: str
     email: Optional[str] = None
 
-class Order(BaseModel):
-    id: int
+class OrderBase(BaseModel):
     kupac: Customer
     stavke: List[OrderItem]
-    status: Literal["Prihvaćeno", "Odbijeno", "Završeno"] = "Prihvaćeno"
+    status: Literal["Prihvaćeno", "Odbijeno", "Završeno"]
     kreirano: datetime
     obrada: Optional[datetime] = None
+
+class Order(OrderBase):
+    id: int
+
