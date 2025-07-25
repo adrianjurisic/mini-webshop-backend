@@ -19,6 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"message": "Mini Webshop radi"}
+
+
 @app.get("/products", response_model=List[Product])
 def get_products():
     return load_products()
