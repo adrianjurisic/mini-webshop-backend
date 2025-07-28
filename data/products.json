@@ -3,7 +3,7 @@
     "name": "Bežične slušalice",
     "description": "Kvalitetne bežične slušalice s aktivnim poništavanjem buke.",
     "price": 105.0,
-    "image_url": "https://example.com/images/slusalice.jpg",
+    "image_url": "https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7",
     "quantity": 15,
     "created_at": "2025-07-01T10:00:00",
     "id": 1
@@ -12,9 +12,18 @@
     "name": "Iphone 14 pro max",
     "description": "128GB",
     "price": 1800.0,
-    "image_url": "ydxvxdb",
+    "image_url": "https://tse2.mm.bing.net/th/id/OIP.kb8UCf3J_vXp_0fg4mMPDAHaJP?w=474&h=474&c=7",
     "quantity": 2,
     "created_at": "2025-07-24T18:38:41.729000Z",
     "id": 2
+  },
+  {
+    "name": "Iphone 14 pro max",
+    "description": "256GB",
+    "price": 2100.0,
+    "image_url": "https://tse2.mm.bing.net/th/id/OIP.kb8UCf3J_vXp_0fg4mMPDAHaJP?w=474&h=474&c=7",
+    "quantity": 2,
+    "created_at": "2025-07-28T15:38:41.729000Z",
+    "id": 3
   }
 ]
