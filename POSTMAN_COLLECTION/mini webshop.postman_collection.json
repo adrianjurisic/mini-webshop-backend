@@ -1,0 +1,1008 @@
+{
+	"info": {
+		"_postman_id": "3bddd1fa-291d-4bec-82d6-cd2e103e33bb",
+		"name": "mini webshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39486643"
+	},
+	"item": [
+		{
+			"name": "Root/test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Test radi",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:29:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "e5814637-6fbb-46e3"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668d9259a28ec26-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Mini Webshop radi\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Prikaz svih proizvoda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Prikaz svih proizvoda",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/products",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:27:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "349"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "3deda64b-8a9c-47cf"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668d619cc41ec22-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Bežične slušalice\",\n        \"description\": \"Kvalitetne bežične slušalice s aktivnim poništavanjem buke.\",\n        \"price\": 105,\n        \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n        \"quantity\": 15,\n        \"created_at\": \"2025-07-01T10:00:00\",\n        \"id\": 1\n    },\n    {\n        \"name\": \"Iphone 14 pro max\",\n        \"description\": \"128GB\",\n        \"price\": 1800,\n        \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.kb8UCf3J_vXp_0fg4mMPDAHaJP?w=474&h=474&c=7\",\n        \"quantity\": 2,\n        \"created_at\": \"2025-07-24T18:38:41.729000Z\",\n        \"id\": 2\n    },\n    {\n        \"name\": \"Iphone 14 pro\",\n        \"description\": \"256GB\",\n        \"price\": 1600,\n        \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.kb8UCf3J_vXp_0fg4mMPDAHaJP?w=474&h=474&c=7\",\n        \"quantity\": 2,\n        \"created_at\": \"2025-07-28T15:38:41.729000Z\",\n        \"id\": 3\n    },\n    {\n        \"name\": \"Iphone 15\",\n        \"description\": \"128GB\",\n        \"price\": 2100,\n        \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.kb8UCf3J_vXp_0fg4mMPDAHaJP?w=474&h=474&c=7\",\n        \"quantity\": 2,\n        \"created_at\": \"2025-07-24T18:38:41.729000Z\",\n        \"id\": 4\n    },\n    {\n        \"name\": \"Iphone 15 pro max\",\n        \"description\": \"256GB\",\n        \"price\": 2500,\n        \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.kb8UCf3J_vXp_0fg4mMPDAHaJP?w=474&h=474&c=7\",\n        \"quantity\": 2,\n        \"created_at\": \"2025-07-28T15:38:41.729000Z\",\n        \"id\": 5\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Dodavanje novog proizvoda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Ipad\",\n  \"description\": \"Neki opis...\",\n  \"price\": 1200,\n  \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n  \"quantity\": 10,\n  \"created_at\": \"2025-07-29T01:32:07.353Z\",\n  \"id\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Kreiran novi proizvod",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Ipad\",\n  \"description\": \"Neki opis...\",\n  \"price\": 1200,\n  \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n  \"quantity\": 10,\n  \"created_at\": \"2025-07-29T01:32:07.353Z\",\n  \"id\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/products",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:33:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "a0465365-9d02-4083"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668debd0f89ec1a-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Ipad\",\n    \"description\": \"Neki opis...\",\n    \"price\": 1200,\n    \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n    \"quantity\": 10,\n    \"created_at\": \"2025-07-29T01:32:07.353000Z\",\n    \"id\": 6\n}"
+				}
+			]
+		},
+		{
+			"name": "Prikaz jednog proizvoda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Jedan proizvod (id=1)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/products/1",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:36:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "e5ab5c0a-9535-4305"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668e29fed4bec24-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Bežične slušalice\",\n    \"description\": \"Kvalitetne bežične slušalice s aktivnim poništavanjem buke.\",\n    \"price\": 105,\n    \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n    \"quantity\": 15,\n    \"created_at\": \"2025-07-01T10:00:00\",\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Izmjena proizvoda",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Bežične slušalice\",\n    \"description\": \"Kvalitetne bežične slušalice s aktivnim poništavanjem buke.\",\n    \"price\": 288.0,\n    \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n    \"quantity\": 15,\n    \"created_at\": \"2025-07-01T10:00:00\",\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Izmijenjena cijena proizvoda",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bežične slušalice\",\n    \"description\": \"Kvalitetne bežične slušalice s aktivnim poništavanjem buke.\",\n    \"price\": 288.0,\n    \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n    \"quantity\": 15,\n    \"created_at\": \"2025-07-01T10:00:00\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/products/1",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:39:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "90fb17d2-d88a-4970"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668e7b71e92ec1c-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Bežične slušalice\",\n    \"description\": \"Kvalitetne bežične slušalice s aktivnim poništavanjem buke.\",\n    \"price\": 288,\n    \"image_url\": \"https://tse2.mm.bing.net/th/id/OIP.LRZ7XDI7RgBP58ZFqt1JEwHaHa?w=474&h=474&c=7\",\n    \"quantity\": 15,\n    \"created_at\": \"2025-07-01T10:00:00\",\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Brisanje proizvoda",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Proizvod obrisan",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/products/1",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:41:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "1fd610b5-c6bf-4246"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668ea354e8eec1a-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Prikaz svih narudzbi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sve narudzbe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/orders",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:42:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "6eeaf82f-68cc-4a90"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668ebe79bd5ec24-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"kupac\": {\n            \"ime\": \"Adrian\",\n            \"prezime\": \"Jurisic\",\n            \"adresa\": \"Sarajevska 73\",\n            \"telefon\": \"061455686\",\n            \"email\": \"testovict712@gmail.com\"\n        },\n        \"stavke\": [\n            {\n                \"product_id\": 1,\n                \"quantity\": 1\n            }\n        ],\n        \"status\": \"Prihvaćeno\",\n        \"kreirano\": \"2025-07-25T14:02:31.819000Z\",\n        \"obrada\": null,\n        \"id\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Prikaz jedne narudzbe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Jedna narudzba",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/orders/1",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:43:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "87633915-ad0f-4f25"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668ecff9fcfec24-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kupac\": {\n        \"ime\": \"Adrian\",\n        \"prezime\": \"Jurisic\",\n        \"adresa\": \"Sarajevska 73\",\n        \"telefon\": \"061455686\",\n        \"email\": \"testovict712@gmail.com\"\n    },\n    \"stavke\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 1\n        }\n    ],\n    \"status\": \"Prihvaćeno\",\n    \"kreirano\": \"2025-07-25T14:02:31.819000Z\",\n    \"obrada\": null,\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Pravljenje narudzbe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"kupac\": {\n    \"ime\": \"Adi\",\n    \"prezime\": \"Jurisic\",\n    \"adresa\": \"Sarajevska 73\",\n    \"telefon\": \"061455686\",\n    \"email\": \"adrianjurisic1601@gmail.com\"\n  },\n  \"stavke\": [\n    {\n      \"product_id\": 2,\n      \"quantity\": 1\n    },\n    {\n      \"product_id\": 3,\n      \"quantity\": 2\n    }\n  ],\n  \"status\": \"Prihvaćeno\",\n  \"kreirano\": \"2025-07-29T01:43:49.431Z\",\n  \"obrada\": \"2025-07-29T01:43:49.431Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Kreirana narudzba",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"kupac\": {\n    \"ime\": \"Adi\",\n    \"prezime\": \"Jurisic\",\n    \"adresa\": \"Sarajevska 73\",\n    \"telefon\": \"061455686\",\n    \"email\": \"adrianjurisic1601@gmail.com\"\n  },\n  \"stavke\": [\n    {\n      \"product_id\": 2,\n      \"quantity\": 1\n    },\n    {\n      \"product_id\": 3,\n      \"quantity\": 2\n    }\n  ],\n  \"status\": \"Prihvaćeno\",\n  \"kreirano\": \"2025-07-29T01:43:49.431Z\",\n  \"obrada\": \"2025-07-29T01:43:49.431Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/orders",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:45:37 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "233"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "7d751ef1-d55d-4d26"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668f0110d80ec1e-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kupac\": {\n        \"ime\": \"Adi\",\n        \"prezime\": \"Jurisic\",\n        \"adresa\": \"Sarajevska 73\",\n        \"telefon\": \"061455686\",\n        \"email\": \"adrianjurisic1601@gmail.com\"\n    },\n    \"stavke\": [\n        {\n            \"product_id\": 2,\n            \"quantity\": 1\n        },\n        {\n            \"product_id\": 3,\n            \"quantity\": 2\n        }\n    ],\n    \"status\": \"Prihvaćeno\",\n    \"kreirano\": \"2025-07-29T01:43:49.431000Z\",\n    \"obrada\": \"2025-07-29T01:43:49.431000Z\",\n    \"id\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Promjena statusa narudzbe",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"Odbijeno\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/orders/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Promijenjen status narudzbe",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"Odbijeno\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mini-webshop-backend.onrender.com/orders/1",
+							"protocol": "https",
+							"host": [
+								"mini-webshop-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 29 Jul 2025 01:47:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "040e6f41-f8e3-41c3"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9668f245bbf3ec1c-ZAG"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Status promijenjen u 'Odbijeno'\"\n}"
+				}
+			]
+		}
+	]
+}
